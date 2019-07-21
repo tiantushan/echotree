@@ -64,9 +64,9 @@ class HandleVar(object):
                     round_num += 1
 
                 # 开始匹配:children 父组下面的子组名称
-                child_group_object = re.search(r'(^\w+)', line_content)
+                child_group_object = re.search(r'(^\w+_(\w_)+\w+)|(^\w+(-\w+)+)|(^\w+)', line_content)
                 if child_group_object and key:
-                    child_group_name = child_group_object.group(1)
+                    child_group_name = child_group_object.group()
                     tmp_list.append(child_group_name)
                     #print(tmp_list)
                     #print(line_num, line_con)
