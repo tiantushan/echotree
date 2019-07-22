@@ -41,7 +41,7 @@ class HandleVar(object):
             round_num = 1
 
             for line_num, line_content in enumerate(open_file_object):
-                res = re.search(r' *\[(\w+):children\]', line_content)
+                res = re.search(r' *\[(\w+(-\w+)*):children\]', line_content)
                 if res:
                     if round_num != 1:
 
